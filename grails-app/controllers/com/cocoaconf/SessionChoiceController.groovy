@@ -1,6 +1,5 @@
 package com.cocoaconf
 
 class SessionChoiceController {
-
-    def index() { }
+    static scaffold = true
 }

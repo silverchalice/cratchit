@@ -1,6 +1,5 @@
 package com.cocoaconf
 
 class PostController {
-
-    def index() { }
+    static scaffold = true
 }

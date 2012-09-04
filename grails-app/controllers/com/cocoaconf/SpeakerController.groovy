@@ -1,6 +1,5 @@
 package com.cocoaconf
 
 class SpeakerController {
-
-    def index() { }
+    static scaffold = true
 }

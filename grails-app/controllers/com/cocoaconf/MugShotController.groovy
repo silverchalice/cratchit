@@ -1,6 +1,5 @@
 package com.cocoaconf
 
 class MugShotController {
-
-    def index() { }
+    static scaffold = true
 }

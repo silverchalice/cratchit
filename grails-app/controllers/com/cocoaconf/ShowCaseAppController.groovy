@@ -1,6 +1,5 @@
 package com.cocoaconf
 
 class ShowCaseAppController {
-
-    def index() { }
+    static scaffold = true
 }

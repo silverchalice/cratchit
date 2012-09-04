@@ -1,6 +1,5 @@
 package com.cocoaconf
 
 class ConferenceController {
-
-    def index() { }
+    static scaffold = true
 }

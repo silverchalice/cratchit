@@ -1,6 +1,5 @@
 package com.cocoaconf
 
 class SponsorshipController {
-
-    def index() { }
+    static scaffold = true
 }

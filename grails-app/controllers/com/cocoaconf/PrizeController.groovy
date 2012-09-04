@@ -1,6 +1,5 @@
 package com.cocoaconf
 
 class PrizeController {
-
-    def index() { }
+    static scaffold = true
 }

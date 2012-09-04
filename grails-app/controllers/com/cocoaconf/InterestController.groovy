@@ -1,6 +1,5 @@
 package com.cocoaconf
 
 class InterestController {
-
-    def index() { }
+    static scaffold = true
 }

@@ -1,6 +1,5 @@
 package com.cocoaconf
 
 class RegistrationController {
-
-    def index() { }
+    static scaffold = true
 }

@@ -1,6 +1,5 @@
 package com.cocoaconf
 
 class UserRoleController {
-
-    def index() { }
+    static scaffold = true
 }

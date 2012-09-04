@@ -1,6 +1,5 @@
 package com.cocoaconf
 
 class PartnerController {
-
-    def index() { }
+    static scaffold = true
 }

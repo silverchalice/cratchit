@@ -1,6 +1,5 @@
 package com.cocoaconf
 
 class PresentationController {
-
-    def index() { }
+    static scaffold = true
 }

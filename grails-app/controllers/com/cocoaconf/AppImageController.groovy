@@ -1,6 +1,5 @@
 package com.cocoaconf
 
 class AppImageController {
-
-    def index() { }
+    static scaffold = true
 }

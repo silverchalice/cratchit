@@ -1,6 +1,5 @@
 package com.cocoaconf
 
 class VenueController {
-
-    def index() { }
+    static scaffold = true
 }

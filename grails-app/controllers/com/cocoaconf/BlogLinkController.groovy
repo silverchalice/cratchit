@@ -1,6 +1,5 @@
 package com.cocoaconf
 
 class BlogLinkController {
-
-    def index() { }
+    static scaffold = true
 }

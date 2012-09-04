@@ -1,6 +1,5 @@
 package com.cocoaconf
 
 class LocationRequestController {
-
-    def index() { }
+    static scaffold = true
 }
