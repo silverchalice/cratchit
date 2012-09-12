@@ -1,6 +1,7 @@
 <%@ page import="com.cocoaconf.Conference" %>
 
 
+<ckeditor:config toolbar="Basic" />
 
 <div class="fieldcontain ${hasErrors(bean: conferenceInstance, field: 'startDate', 'error')} ">
 	<label for="startDate">
@@ -72,7 +73,7 @@
 		<g:message code="conference.registrationBlurb.label" default="Registration Blurb" />
 		
 	</label>
-    <ckeditor:editor name="registrationBlurb" height="400px" width="80%">
+    <ckeditor:editor name="registrationBlurb" height="400px" width="75%">
         ${conferenceInstance.registrationBlurb}
     </ckeditor:editor>
 </div>
@@ -82,7 +83,7 @@
 		<g:message code="conference.eventBriteBlurb.label" default="Event Brite Blurb" />
 		
 	</label>
-	<g:textArea name="eventBriteBlurb" cols="40" rows="5" maxlength="10000" value="${conferenceInstance?.eventBriteBlurb}"/>
+	<g:textArea name="eventBriteBlurb" cols="40" rows="5" maxlength="100000" value="${conferenceInstance?.eventBriteBlurb}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: conferenceInstance, field: 'galleryBlurb', 'error')} ">
@@ -90,7 +91,9 @@
 		<g:message code="conference.galleryBlurb.label" default="Gallery Blurb" />
 		
 	</label>
-	<g:textArea name="galleryBlurb" cols="40" rows="5" maxlength="10000" value="${conferenceInstance?.galleryBlurb}"/>
+    <ckeditor:editor name="galleryBlurb" height="400px" width="75%">
+        ${conferenceInstance.galleryBlurb}
+    </ckeditor:editor>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: conferenceInstance, field: 'partnerBlurb', 'error')} ">
@@ -98,7 +101,9 @@
 		<g:message code="conference.partnerBlurb.label" default="Partner Blurb" />
 		
 	</label>
-	<g:textArea name="partnerBlurb" cols="40" rows="5" maxlength="100000" value="${conferenceInstance?.partnerBlurb}"/>
+    <ckeditor:editor name="partnerBlurb" height="400px" width="75%">
+        ${conferenceInstance.partnerBlurb}
+    </ckeditor:editor>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: conferenceInstance, field: 'featuredSpeakers', 'error')} ">
@@ -106,7 +111,9 @@
 		<g:message code="conference.featuredSpeakers.label" default="Featured Speakers" />
 		
 	</label>
-	<g:textArea name="featuredSpeakers" cols="40" rows="5" maxlength="100000" value="${conferenceInstance?.featuredSpeakers}"/>
+    <ckeditor:editor name="featuredSpeakers" height="400px" width="75%">
+        ${conferenceInstance.featuredSpeakers}
+    </ckeditor:editor>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: conferenceInstance, field: 'sponsorListBlurb', 'error')} ">
