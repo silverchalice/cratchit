@@ -7,6 +7,11 @@ class UrlMappings {
 			}
 		}
 
+        "/users"{
+            controller = "user"
+            action = "list"
+        }
+
 		"/"(view:"/index")
 		"500"(view:'/error')
 	}
