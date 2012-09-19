@@ -110,4 +110,45 @@ class UserController {
             redirect(action: "show", id: id)
         }
     }
+
+    def upload() {}
+
+    def processi() {
+        def uploadedFile = request.getFile("users")
+        if(!uploadedFile.empty){
+            if(!uploadedFile.originalFilename.endsWith(".txt")){
+                flash.message = "Please upload a text file."
+                redirect(action: "upload")
+                return
+            } else {
+                def failures = 0
+                def nonFailures = 0
+
+                uploadedFile.transferTo(new File('users.txt'))
+                def users = new File('users.txt')
+
+                users.eachLine { line ->
+                    def fields = line.tokenize("|")
+                    def user = new User(username: fields[2], email: fields[2], firstName: fields[0],
+                             lastName: fields[1], password: springSecurityService.encodePassword("cocoaconf"),
+                             temporaryPassword: true, enabled: true, accountExpired: false, accountLocked: false,
+                             passwordExpired: false)
+                    if(!user.save()){
+                        failures++
+                    } else {
+                        nonFailures++
+                    }
+                }
+
+                users.delete()
+
+                flash.message = "Yay. ($failures failed, $nonFailures succeeded)"
+                redirect(action: "upload")
+            }
+        } else {
+            flash.message = "You did not upload a file."
+            redirect(action: "upload")
+        }
+    }
+
 }
