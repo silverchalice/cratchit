@@ -13,10 +13,11 @@
 			<ul>
 				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
 				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+				<li><g:link class="list" action="upload">Upload user list</g:link></li>
 			</ul>
 		</div>
 		<div id="list-user" class="content scaffold-list" role="main">
-			<h1><g:message code="default.list.label" args="[entityName]" /></h1>
+			<h1>All Users</h1>
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
@@ -24,13 +25,9 @@
 				<thead>
 					<tr>
 					
-						<g:sortableColumn property="username" title="${message(code: 'user.username.label', default: 'Username')}" />
-					
-						<g:sortableColumn property="password" title="${message(code: 'user.password.label', default: 'Password')}" />
-					
-						<th><g:message code="user.choice.label" default="Choice" /></th>
-					
-						<g:sortableColumn property="street" title="${message(code: 'user.street.label', default: 'Street')}" />
+						<th>Name</th>
+
+						<g:sortableColumn property="email" title="${message(code: 'user.email.label', default: 'Email')}" />
 					
 						<g:sortableColumn property="city" title="${message(code: 'user.city.label', default: 'City')}" />
 					
@@ -42,13 +39,9 @@
 				<g:each in="${userInstanceList}" status="i" var="userInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${userInstance.id}">${fieldValue(bean: userInstance, field: "username")}</g:link></td>
+						<td><g:link action="show" id="${userInstance.id}">${userInstance.firstName} ${userInstance.lastName}</g:link></td>
 					
-						<td>${fieldValue(bean: userInstance, field: "password")}</td>
-					
-						<td>${fieldValue(bean: userInstance, field: "choice")}</td>
-					
-						<td>${fieldValue(bean: userInstance, field: "street")}</td>
+						<td>${fieldValue(bean: userInstance, field: "email")}</td>
 					
 						<td>${fieldValue(bean: userInstance, field: "city")}</td>
 					
