@@ -146,7 +146,7 @@ class UserController {
                 redirect(action: "upload")
             }
         } else {
-            flash.message = "You did not upload a file."
+            flash.message = "The Wendy says that you did not upload a file."
             redirect(action: "upload")
         }
     }
